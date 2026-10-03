@@ -1,5 +1,5 @@
 -- ~/.config/nvim/lua/plugins/look.lua
--- Reproduces the visual aesthetic: solarized-osaka colorscheme (transparent),
+-- Reproduces the visual aesthetic: solarized-osaka colorscheme (dark background),
 -- bufferline top tabs with diagnostic badges, lualine bottom statusline.
 
 return {
@@ -12,13 +12,13 @@ return {
     lazy = false,
     priority = 1000,
     opts = {
-      transparent = true,
+      transparent = false,
       terminal_colors = true,
       styles = {
         comments = { italic = true },
         keywords = { italic = true },
-        sidebars = "transparent",
-        floats = "transparent",
+        sidebars = "dark",
+        floats = "dark",
       },
     },
   },
