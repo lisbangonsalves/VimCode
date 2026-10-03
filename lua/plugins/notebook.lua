@@ -79,19 +79,7 @@ return {
   },
 
   ------------------------------------------------------------------
-  -- 5. File explorer sidebar
-  ------------------------------------------------------------------
-  {
-    "nvim-tree/nvim-tree.lua",
-    opts = {
-      view = { width = 32 },
-      renderer = { group_empty = true },
-      filters = { dotfiles = false },
-    },
-  },
-
-  ------------------------------------------------------------------
-  -- 6. Python-specific LSP/lint (ML/quant workloads)
+  -- 5. Python-specific LSP/lint (ML/quant workloads)
   ------------------------------------------------------------------
   {
     "neovim/nvim-lspconfig",
@@ -104,7 +92,7 @@ return {
   },
 
   ------------------------------------------------------------------
-  -- 7. REPL-driven development for quick iteration outside notebooks
+  -- 6. REPL-driven development for quick iteration outside notebooks
   ------------------------------------------------------------------
   {
     "Vigemus/iron.nvim",
