@@ -1,5 +1,10 @@
 -- ~/.config/nvim/lua/plugins/notebook.lua
--- REQUIRES a terminal with the Kitty graphics protocol: Kitty, WezTerm, or Ghostty.
+-- Inline images need a terminal with the Kitty graphics protocol: Kitty, WezTerm, or Ghostty.
+-- Elsewhere (Terminal.app, iTerm2, ...) image.nvim is skipped and molten shows text output only.
+
+local has_kitty_graphics = vim.env.KITTY_WINDOW_ID ~= nil
+  or vim.env.TERM_PROGRAM == "ghostty"
+  or vim.env.TERM_PROGRAM == "WezTerm"
 
 return {
 
@@ -13,7 +18,7 @@ return {
     build = ":UpdateRemotePlugins",
     dependencies = { "3rd/image.nvim" },
     init = function()
-      vim.g.molten_image_provider = "image.nvim"
+      vim.g.molten_image_provider = has_kitty_graphics and "image.nvim" or "none"
       vim.g.molten_output_win_max_height = 20
       vim.g.molten_auto_open_output = true
       vim.g.molten_wrap_output = true
@@ -41,8 +46,11 @@ return {
   ------------------------------------------------------------------
   {
     "3rd/image.nvim",
+    cond = has_kitty_graphics,
     opts = {
       backend = "kitty",
+      -- don't fetch remote images (e.g. README badges) just because a markdown file was opened
+      integrations = { markdown = { download_remote_images = false } },
       max_width = 100,
       max_height = 30,
       max_height_window_percentage = math.huge,
