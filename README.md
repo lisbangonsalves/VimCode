@@ -2,6 +2,8 @@
 
 A Neovim setup built on [LazyVim](https://lazyvim.org), tuned for Python, Jupyter notebooks and working alongside Claude Code.
 
+![VimCode with the explorer, a markdown file, the Claude Code panel and the which-key menu](docs/screenshot.webp)
+
 - **Look:** solarized-osaka (transparent), slanted bufferline tabs with diagnostics, lualine statusline with clock
 - **Notebooks:** run Jupyter cells in the buffer (molten), inline plots (image.nvim), `.ipynb` opened as markdown (jupytext)
 - **Python:** pyright + ruff language servers, ipython REPL (iron.nvim)
