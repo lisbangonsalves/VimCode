@@ -14,13 +14,13 @@ VimCode installs as its own Neovim app (`NVIM_APPNAME=vimcode`), so your existin
 One command:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/hsarchitects/VimCode/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/lisbangonsalves/VimCode/main/install.sh | bash
 ```
 
 Or clone it and install from the clone (edits in the clone take effect directly):
 
 ```bash
-git clone https://github.com/hsarchitects/VimCode.git
+git clone https://github.com/lisbangonsalves/VimCode.git
 cd VimCode && ./install.sh
 ```
 

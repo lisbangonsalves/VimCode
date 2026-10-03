@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # VimCode installer
-#   curl -fsSL https://raw.githubusercontent.com/hsarchitects/VimCode/main/install.sh | bash
+#   curl -fsSL https://raw.githubusercontent.com/lisbangonsalves/VimCode/main/install.sh | bash
 # or, from a clone:
 #   ./install.sh
 #
@@ -8,7 +8,7 @@
 # ~/.config/nvim is never touched. Launch with `vimcode`.
 set -euo pipefail
 
-REPO="${VIMCODE_REPO:-https://github.com/hsarchitects/VimCode.git}"
+REPO="${VIMCODE_REPO:-https://github.com/lisbangonsalves/VimCode.git}"
 APP=vimcode
 CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/$APP"
 BIN="$HOME/.local/bin"
