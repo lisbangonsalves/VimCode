@@ -30,6 +30,8 @@ Then run:
 vimcode
 ```
 
+The first install may print an "Unmet requirements for nvim-treesitter" warning. It's a one-off: the missing `tree-sitter` tool is downloaded automatically during that run.
+
 ### Requirements
 
 - Neovim 0.11.2 or newer, and git

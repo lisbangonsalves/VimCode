@@ -52,7 +52,8 @@ printf '#!/bin/sh\nexec env NVIM_APPNAME=%s nvim "$@"\n' "$APP" > "$BIN/vimcode"
 chmod +x "$BIN/vimcode"
 
 say "Installing plugins at the versions in lazy-lock.json (first run takes a minute)"
-NVIM_APPNAME=$APP nvim --headless "+Lazy! restore" +qa
+NVIM_APPNAME=$APP nvim --headless -c 'lua if not package.loaded.lazy then vim.cmd.cquit() end' '+Lazy! restore' +qa \
+  || die "plugin install failed; run 'vimcode' to see the error"
 
 # Optional tools: warn only, VimCode still starts without them
 missing=()
